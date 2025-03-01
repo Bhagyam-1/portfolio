@@ -23,3 +23,9 @@ export interface SocialIconInfoI {
     href: string;
     name: string;
 }
+
+export interface CardInfoI {
+    id: string;
+    header: string;
+    list: string[];
+}

@@ -1,37 +1,51 @@
 @import "tailwindcss";
-@import "./animations.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     /* Colors - Light Mode */
     --color-light-background: #ffffff;
-    --color-light-background-alt: #f3f4f6;
+    --color-light-background-alt: #f0f0f0;
+    --color-light-background-lightgrey: #f3f4f6;
     --color-light-primary: #111827;
     --color-light-primary-alt: #1f2937;
     --color-light-secondary: #6b7280;
     --color-light-secondary-alt: #9ca3af;
     --color-light-text: #111827;
     --color-light-text-alt: #374151;
+    --color-light-tertiary: #d1d5db;
+    --color-light-shadow: #cacaca;
   
     /* Colors - Dark Mode */
     --color-dark-background: #000000;
-    --color-dark-background-alt: #14171f;
+    --color-dark-background-alt: #202020;
     --color-dark-primary: #f9fafb;
     --color-dark-primary-alt: #e5e7eb;
     --color-dark-secondary: #d1d5db;
     --color-dark-secondary-alt: #9ca3af;
     --color-dark-text: #f9fafb;
     --color-dark-text-alt: #e5e7eb;
+    --color-dark-tertiary: #374151;
+    --color-dark-shadow: #646464;
+    --color-dark-glass-color: #c0c0c021;
   
     /* Font Sizes */
     --font-*: initial;
+
+    /* screen size*/
+    --breakpoint-xs: 20rem;
 }
 
 html {
-    font-family: 'Sofia';
+    font-family: 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-size: clamp(16px, 1.2vw, 28px);
+    cursor: url(/custom-cursor.svg) 16 16, auto;
+}
+
+button:hover, a:hover {
+    cursor: url(/hovered-cursor.svg) 16 16, pointer;
 }
 
 ::-webkit-scrollbar {
@@ -46,29 +60,10 @@ html {
     
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); 
+    background: rgba(140, 140, 140, 0.9); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-}
-
-
-@media only screen and (min-width: 1024px) {
-    html {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (min-width: 1440px) {
-    html {
-        font-size: 24px;
-    }
-}
-
-@media only screen and (min-width: 2000px) {
-    html {
-        font-size: 32px;
-    }
 }

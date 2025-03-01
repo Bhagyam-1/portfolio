@@ -14,7 +14,7 @@ const getNavElement = (element: NavigationElementI, linkIcon: string | React.Rea
         baseClasses += ` block px-8 py-3 ${lightClasses} ${darkClasses} rounded-full text-lg`;
 
         return (
-            <Link to={element.linkTo} className={baseClasses}>
+            <Link to={element.linkTo} className={baseClasses} aria-label={element.name}>
                 {linkIcon}
             </Link>
         );
@@ -33,7 +33,7 @@ const LinkElement = ({ linkElement }: LinkElementProps) => {
 
     return (
         linkElement.variant === LinkVariant.Nav ? (
-            <li className="hover:animate-bounce hover:scale-125 hover:text-light-text dark:hover:text-dark-text font-semibold text-base">
+            <li className="hover:scale-125 hover:text-light-text dark:hover:text-dark-text font-semibold text-base">
                 {navElement}
             </li>
         ) : (

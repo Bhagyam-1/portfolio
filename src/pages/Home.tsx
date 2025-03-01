@@ -2,25 +2,53 @@ import LinkElement from '../components/common/LinkElement';
 import { exploreMyWork } from '../utility/constants';
 import SocialIcons from '../components/sections/Home/SocialIcons';
 import HomePageHeader from '../components/sections/Home/HomePageHeader';
-
-
+import { motion } from 'framer-motion';
+import image from '../assets/image.webp'
 const Home = () => {
     return (
-        <section className="flex flex-col items-center justify-center text-center gap-4">
+        <motion.section
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center justify-center text-center gap-4"
+            aria-labelledby="home-header"
+        >
             <HomePageHeader />
 
-            <figure className='mb-2'>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtKe5LBNVlgXTS8xL_3FEdvuAOFWIB6LOBw&s' alt='Portrait of me' className='w-full rounded-full' />
-            </figure>
+            <motion.figure
+                initial={{ opacity: 0, y: 50, scale: 0.8, rotateZ: -20 }}
+                animate={{ opacity: 1, y: 0, scale: 1, rotateZ: 0 }}
+                transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="mb-2"
+                aria-labelledby="profile-image"
+            >
+                <img
+                    src={image}
+                    alt="A Portrait of Bhagyam Pandey"
+                    className="rounded-full h-50 w-50"
+                    id="profile-image"
+                    loading="lazy"
+                />
+            </motion.figure>
 
-            <section>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
+            >
                 <LinkElement linkElement={exploreMyWork} />
-            </section>
+            </motion.div>
 
-            <nav className="flex gap-4 items-center" aria-label="Social Links">
+            <motion.nav
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.9, duration: 0.8, ease: 'easeOut' }}
+                className="flex gap-4 items-center"
+                aria-label="Social Media Links"
+            >
                 <SocialIcons />
-            </nav>
-        </section>
+            </motion.nav>
+        </motion.section>
     );
 };
 

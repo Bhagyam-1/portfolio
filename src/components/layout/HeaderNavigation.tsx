@@ -1,19 +1,18 @@
-import { useEffect } from "react";
-import { navigationElements } from "../../utility/constants";
+import { useEffect, useState } from "react";
+import { navigationElements as initialNavElements } from "../../utility/constants";
 import LinkElement from "../common/LinkElement";
 import { useLocation } from "react-router";
-import { HomeIcon } from "@heroicons/react/24/outline";
-import { UserIcon } from "@heroicons/react/24/outline";
-import { FolderIcon } from "@heroicons/react/24/outline";
+import { CiFolderOn, CiUser } from "react-icons/ci";
+import { HiOutlineHome } from "react-icons/hi2";
 
 const getLinkIcon = (linkElementName: string) => {
     switch (linkElementName) {
         case 'Home':
-            return <HomeIcon className="size-5" />
+            return <HiOutlineHome className="size-6" />
         case 'About':
-            return <UserIcon className="size-5" />
+            return <CiUser className="size-6" />
         case 'Projects':
-            return <FolderIcon className="size-5" />
+            return <CiFolderOn className="size-6" />
         default:
             return null;
     }
@@ -21,18 +20,19 @@ const getLinkIcon = (linkElementName: string) => {
 
 const HeaderNavigation = () => {
     const location = useLocation();
+    const [navElements, setNavElements] = useState(initialNavElements);
 
     useEffect(() => {
-        const currentRouteElement = navigationElements.find((element) => location.pathname === element.linkTo) || navigationElements[0]
-        currentRouteElement.active = true;
+        const updatedNavElements = navElements.map((element) => ({ ...element, active: location.pathname === element.linkTo }))
+        setNavElements(updatedNavElements)
     }, [location.pathname])
 
     return (
         <nav className="w-full flex justify-center">
-            <ul className="w-fit flex gap-8 justify-center rounded-full bg-light-background-alt 
-            dark:border-dark-background-alt dark:bg-dark-background-alt dark:border-dark-primary px-8 py-2">
+            <ul className="xs:w-[clamp(15rem,50vw,20rem)] w-[11rem] flex justify-around mr-1 rounded-full bg-light-background-lightgrey shadow-[0px_0px_2px_0px_var(--color-light-shadow)] dark:shadow-[0px_0px_2px_0px_var(--color-dark-shadow)]
+            dark:bg-dark-glass-color dark:border-dark-primary dark:text-dark-shadow px-8 py-3">
                 {
-                    navigationElements.map((element) => {
+                    navElements.map((element) => {
                         element.icon = getLinkIcon(element.name);
                         return <LinkElement linkElement={element} key={element.id} />
                     })
