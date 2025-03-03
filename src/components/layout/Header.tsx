@@ -4,7 +4,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const Header = () => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        return localStorage.getItem('theme') === 'Dark';
+        return localStorage.getItem('theme') === 'dark';
     });
 
     useEffect(() => {
