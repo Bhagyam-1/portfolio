@@ -1,5 +1,4 @@
 import { projects } from "../../../utility/constants";
-import { motion } from "framer-motion";
 import ProjectImage from "./ProjectImages";
 
 interface Project {
