@@ -1,11 +1,13 @@
-import { motion } from "framer-motion";
 import ProjectsListing from "../components/sections/Projects/ProjectsListing";
 
 const Projects = () => {
 
     return (
-        <section className="p-4 flex flex-col gap-12 items-center" aria-labelledby="projects-header">
-            <motion.h1 initial={{ scale: 2 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} className="text-4xl font-bold" id="projects-header">My Projects</motion.h1>
+        <section id="projects"
+            className="flex flex-col gap-12 items-center p-4 pt-16 mb-12 w-full dark:bg-dark-background z-[1]"
+            aria-labelledby="projects-heading"
+        >
+            <h2 id="projects-heading" className="sr-only">My Projects</h2>
             <ProjectsListing />
         </section>
     );

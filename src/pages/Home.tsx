@@ -1,53 +1,30 @@
-import LinkElement from '../components/common/LinkElement';
-import { exploreMyWork } from '../utility/constants';
-import SocialIcons from '../components/sections/Home/SocialIcons';
-import HomePageHeader from '../components/sections/Home/HomePageHeader';
 import { motion } from 'framer-motion';
-import image from '../assets/image.webp'
+
 const Home = () => {
     return (
         <motion.section
+            id="home"
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center justify-center text-center gap-4"
+            className="h-[100vh] w-[90vw]"
             aria-labelledby="home-header"
+            aria-live="polite"
         >
-            <HomePageHeader />
+            <div className="relative h-full">
+                <div className="h-[100vh] flex flex-col items-center justify-center text-center text-shadow">
+                    <h1 id="home-header" className="dark:text-dark-shadow text-3xl font-bold m-0">Hi there, I'm <span className="dark:text-pure-white">Bhagyam</span></h1>
+                    <h2 className="dark:text-dark-shadow text-2xl md:text-3xl m-0">
+                        I craft <span className="dark:text-pure-white">dynamic and pixel-perfect interfaces</span> <br />
+                        that bring ideas to life.
+                    </h2>
+                </div>
 
-            <motion.figure
-                initial={{ opacity: 0, y: 50, scale: 0.8, rotateZ: -20 }}
-                animate={{ opacity: 1, y: 0, scale: 1, rotateZ: 0 }}
-                transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="mb-2"
-                aria-labelledby="profile-image"
-            >
-                <img
-                    src={image}
-                    alt="A Portrait of Bhagyam Pandey"
-                    className="rounded-full h-50 w-50"
-                    id="profile-image"
-                    loading="lazy"
-                />
-            </motion.figure>
-
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
-            >
-                <LinkElement linkElement={exploreMyWork} />
-            </motion.div>
-
-            <motion.nav
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.9, duration: 0.8, ease: 'easeOut' }}
-                className="flex gap-4 items-center"
-                aria-label="Social Media Links"
-            >
-                <SocialIcons />
-            </motion.nav>
+                <div className="bg-noise-container">
+                    <div className='flex flex-col justify-center h-full box-decoration-clone bg-noise'>
+                    </div>
+                </div>
+            </div>
         </motion.section>
     );
 };

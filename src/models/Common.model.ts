@@ -1,6 +1,5 @@
 export enum LinkVariant {
-    Nav = 'nav',
-    Button = 'button'
+    NavButton = 'navButton'
 }
 
 export interface NavigationElementI {
@@ -8,8 +7,7 @@ export interface NavigationElementI {
     linkTo: string,
     name: string,
     active: boolean,
-    variant: LinkVariant,
-    icon?: null | React.ReactElement;
+    variant: LinkVariant
 }
 
 export interface SocialIconLinkI {
@@ -27,5 +25,15 @@ export interface SocialIconInfoI {
 export interface CardInfoI {
     id: string;
     header: string;
-    list: string[];
+    list: string | string[];
+}
+
+export interface ExperienceInfoI extends Pick<CardInfoI, 'id' | 'header'> {
+    list: ListInfoI;
+}
+
+export interface ListInfoI {
+    position: string;
+    timeLine: string;
+    workInfo: string[];
 }

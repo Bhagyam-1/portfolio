@@ -1,44 +1,39 @@
-import { Link, NavLink } from "react-router";
-import { LinkVariant, NavigationElementI } from "../../models/Common.model";
+import { Link } from 'react-scroll';
+import { NavigationElementI } from "../../models/Common.model";
+import { ReactNode } from 'react';
 
 interface LinkElementProps {
     linkElement: NavigationElementI;
 }
 
-const getNavElement = (element: NavigationElementI, linkIcon: string | React.ReactElement) => {
-    let baseClasses = 'transition-all duration-300 ease-in-out';
+const getNavElement = (element: NavigationElementI, linkIcon: string | ReactNode) => {
+    let baseClasses = 'rounded-[40px] ease-in-out font-semibold text-md px-3 py-3';
+    const activeClass = 'transition-colors duration-700 ease-in-out text-pure-white font-bold bg-radial from-dark-radial-initial to-dark-radial-finish shadow-[0_10px_30px_2px_#393939d4]';
 
-    if (element.variant === 'button') {
-        const lightClasses = 'bg-light-secondary-alt hover:bg-light-secondary text-light-text-alt hover:text-light-background';
-        const darkClasses = 'dark:hover:bg-dark-secondary text-dark-text-alt dark:hover:text-dark-background';
-        baseClasses += ` block px-8 py-3 ${lightClasses} ${darkClasses} rounded-full text-lg`;
-
-        return (
-            <Link to={element.linkTo} className={baseClasses} aria-label={element.name}>
-                {linkIcon}
-            </Link>
-        );
-    } else {
-        return (
-            <NavLink to={element.linkTo} className={({ isActive }) => `${baseClasses} ${isActive && element.variant ? 'text-light-primary dark:text-dark-primary' : ''}`}>
-                {linkIcon}
-            </NavLink>
-        );
-    }
+    return (
+        <Link
+            to={element.linkTo}
+            containerId="scroll-container"
+            spy={true}
+            smooth={true}
+            duration={500}
+            isDynamic={true}
+            offset={-400}
+            className={baseClasses}
+            activeClass={activeClass}
+            aria-label={element.name}
+        >
+            {linkIcon}
+        </Link>
+    );
 }
 
 const LinkElement = ({ linkElement }: LinkElementProps) => {
-    const linkIcon = linkElement.icon || linkElement.name;
+    const linkIcon = linkElement.name;
     const navElement = getNavElement(linkElement, linkIcon);
 
     return (
-        linkElement.variant === LinkVariant.Nav ? (
-            <li className="hover:scale-125 hover:text-light-text dark:hover:text-dark-text font-semibold text-base">
-                {navElement}
-            </li>
-        ) : (
-            navElement
-        )
+        navElement
     );
 }
 

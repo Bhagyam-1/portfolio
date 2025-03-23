@@ -1,8 +1,8 @@
-import Route from './components/layout/Route';
+import Layout from "./components/layout/Layout"
 
 function App() {
     return (
-        <Route />
+        <Layout />
     )
 }
 

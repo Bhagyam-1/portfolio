@@ -1,23 +1,16 @@
 import { motion } from "framer-motion";
-import { AnimatedLineProps } from "../../models/ComponentProps.model";
 
 
-const AnimatedLine = ({ elements, classes }: AnimatedLineProps) => {
+const AnimatedLine = () => {
     return (
-        <div className={classes} aria-hidden="true">
-            {
-                elements.map((element, index: number) =>
-                    <div key={element.id} className="w-4 flex grow items-center">
-                        <motion.div
-                            key={element.header}
-                            className="absolute h-4 w-4 rounded-full dark:bg-dark-tertiary bg-light-secondary-alt"
-                            initial={{ opacity: 0, y: 100 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4 + index * 0.5, duration: 1 }}
-                        />
-                    </div>
-                )
-            }
+        <div aria-hidden="true" className="w-4 flex flex-col items-center gap-4 h-full pt-[11px] md:pt-[14px]">
+            <motion.div
+                className="h-3 w-3 rounded-full"
+                initial={{ backgroundColor: "#545453" }}
+                whileInView={{ backgroundColor: "#ffffff", boxShadow: "0 0 25px 0 white" }}
+                transition={{ delay: 0.6, duration: 0.7 }}
+            />
+            <div className="grow w-[4px] bg-dark-background-alt"></div>
         </div>
     )
 }

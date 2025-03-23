@@ -1,10 +1,10 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { socialLinks } from "../../../utility/constants";
-import SocialIconLink from "../../common/SocialIconLink";
+import { socialLinks } from "../../utility/constants";
+import SocialIconLink from "./SocialIconLink";
 import { SiLeetcode } from "react-icons/si";
 import { MdMail } from "react-icons/md";
-import { SocialIconInfoI, SocialIconLinkI } from "../../../models/Common.model";
-import CopyToClipboardIcons from "../../common/CopyToClipboardIcon";
+import { SocialIconInfoI, SocialIconLinkI } from "../../models/Common.model";
+import CopyToClipboardIcons from "./CopyToClipboardIcon";
 import { Fragment } from "react/jsx-runtime";
 import { FaSquarePhone } from "react-icons/fa6";
 
@@ -19,11 +19,11 @@ const getIcon = (socialMedia: SocialIconInfoI) => {
         case 'Linkedin':
             return { icon: <FaLinkedin className="text-[1.35rem]" />, className: linkClasses }
 
-        case 'Phone':
-            return { icon: <CopyToClipboardIcons icon={<FaSquarePhone className="text-2xl" />} iconInfo={{ link: socialMedia.href, className: clipboardClasses }} /> }
+        case 'Phone Number':
+            return { icon: <CopyToClipboardIcons icon={<FaSquarePhone className="text-2xl" />} iconInfo={{ link: socialMedia, className: clipboardClasses }} /> }
 
-        case 'Mail':
-            return { icon: <CopyToClipboardIcons icon={<MdMail className="text-2xl" />} iconInfo={{ link: socialMedia.href, className: clipboardClasses }} /> }
+        case 'E-Mail':
+            return { icon: <CopyToClipboardIcons icon={<MdMail className="text-2xl" />} iconInfo={{ link: socialMedia, className: clipboardClasses }} /> }
 
         case 'Leetcode':
             return { icon: <SiLeetcode className="text-xl" />, className: linkClasses }
@@ -47,7 +47,7 @@ const getIconLinkDescription = (socialLink: SocialIconInfoI) => {
 }
 
 const SocialIcons = () => {
-    const copyToClipboardIcons = ['Mail', 'Phone'];
+    const copyToClipboardIcons = ['E-Mail', 'Phone Number'];
 
     return (
         <ul className="flex gap-4 h-fit">
