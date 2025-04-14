@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { aboutDescription } from "../../../utility/constants";
-import image from '../../../assets/image.webp';
+import profile from '../../../assets/profile.webp';
 
 const AboutDescription = () => {
     return (
@@ -21,7 +21,7 @@ const AboutDescription = () => {
                 className="relative h-1/2"
             >
                 <img
-                    src={image}
+                    src={profile}
                     alt="A Portrait of Bhagyam Pandey"
                     className="sticky transform top-8 rounded-full h-56 w-60 flex-shrink-0"
                     id="profile-image"
