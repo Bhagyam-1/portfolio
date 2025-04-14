@@ -1,0 +1,30 @@
+import SocialIcons from "../components/common/SocialIcons";
+import Resume from "../components/sections/About/Resume";
+
+const Contact = () => {
+    return (
+        <footer
+            id="contact"
+            className="relative w-[100vw]"
+            aria-labelledby="contact-header"
+        >
+            <div className="flex flex-col items-center justify-center gap-14 p-8 pt-16">
+                <h2 id="contact-header" className="self-start w-full pb-24 pl-4 border-b-[1px] border-dark-text text-2xl text-dark-text-alt">
+                    Let's craft a better future, <span className="text-dark-text">together.</span>
+                </h2>
+                <div className="flex flex-col-reverse gap-4 md:flex-row items-center justify-between w-full text-sm px-4">
+                    <span>&#169; 2025 All rights reserved</span>
+                    <div role="group" className="flex">
+                        <Resume />
+                        <SocialIcons />
+                    </div>
+                </div>
+            </div>
+            <div className="absolute h-full w-full top-0 opacity-20 pointer-events-none text-center z-[1]">
+                <div className="h-full bg-noise"></div>
+            </div>
+        </footer>
+    )
+}
+
+export default Contact;
