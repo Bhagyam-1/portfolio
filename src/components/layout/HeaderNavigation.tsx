@@ -8,9 +8,9 @@ const HeaderNavigation = () => {
     const [navElements, setNavElements] = useState(initialNavElements);
 
     useEffect(() => {
-        const updatedNavElements = navElements.map((element) => ({ ...element, active: location.pathname === element.linkTo }))
+        const updatedNavElements = navElements.map((element) => ({ ...element, active: location.hash === `#${element.linkTo}` }))
         setNavElements(updatedNavElements)
-    }, [location.pathname])
+    }, [location.hash])
 
     return (
         <nav className="w-full flex justify-center">
