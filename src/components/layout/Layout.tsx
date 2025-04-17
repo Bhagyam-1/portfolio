@@ -9,7 +9,7 @@ import Contact from "../../pages/Contact";
 const Layout = () => {
 
     return (
-        <div className="w-screen h-screen bg-black flex flex-col">
+        <div className="w-screen h-screen dark:bg-dark-background flex flex-col">
             <Header />
 
             <motion.main

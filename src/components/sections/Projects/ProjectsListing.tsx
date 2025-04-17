@@ -12,7 +12,7 @@ const ProjectsListing: React.FC = () => {
         <div className="space-y-16">
             {projects.map((project: Project) => (
                 <section
-                    className="shadow-[0_0_52px_-29px_#929292] flex flex-col gap-12 p-8 perspective-[1500px]"
+                    className="shadow-[0_0_52px_-29px_#000000] flex flex-col gap-12 p-8 perspective-[1500px]"
                     key={project.id}
                     aria-labelledby={`project-heading-${project.id}`}
                 >

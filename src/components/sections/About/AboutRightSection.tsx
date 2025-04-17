@@ -4,7 +4,7 @@ import AboutContent from "./AboutContent";
 const AboutRightSection = () => {
     return (
         <div
-            className="h-fit p-2"
+            className="h-fit py-2 px-6"
         >
             <div className="flex flex-col gap-16">
                 <AboutDescription />

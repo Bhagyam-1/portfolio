@@ -1,4 +1,3 @@
-import { Link } from 'react-scroll';
 import { NavigationElementI } from "../../models/Common.model";
 import { ReactNode } from 'react';
 
@@ -11,20 +10,7 @@ const getNavElement = (element: NavigationElementI, linkIcon: string | ReactNode
     const activeClass = 'transition-colors duration-700 ease-in-out text-pure-white font-bold bg-radial from-dark-radial-initial to-dark-radial-finish shadow-[0_10px_30px_2px_#393939d4]';
 
     return (
-        <Link
-            to={element.linkTo}
-            containerId="scroll-container"
-            spy={true}
-            smooth={true}
-            duration={500}
-            isDynamic={true}
-            offset={-400}
-            className={baseClasses}
-            activeClass={activeClass}
-            aria-label={element.name}
-        >
-            {linkIcon}
-        </Link>
+        <a href={`#${element.linkTo}`} className={baseClasses}>{linkIcon}</a>
     );
 }
 

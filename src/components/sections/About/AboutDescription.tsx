@@ -9,7 +9,7 @@ const AboutDescription = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.4 }}
             aria-labelledby="about-description"
-            className="md:h-[100vh] flex flex-col md:flex-row justify-around items-center gap-4 relative">
+            className="md:h-[100vh] flex flex-col mt-12 md:flex-row justify-between items-center gap-12 relative">
 
             <h3 id="about-intro" className="sr-only">My Journey in Tech</h3>
 
@@ -18,7 +18,7 @@ const AboutDescription = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 1.5 }}
                 aria-labelledby="profile-image"
-                className="relative h-1/2"
+                className="relative h-1/2 min-w-[240px]"
             >
                 <img
                     src={profile}
