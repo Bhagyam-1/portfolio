@@ -19,8 +19,8 @@ const TechCircle = () => {
         <div>
             <motion.div
                 initial={{ rotateZ: 0 }}
-                animate={{ rotateZ: 360 }}
-                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                whileInView={{ rotateZ: 360 }}
+                transition={{ duration: 2, ease: "linear" }}
                 className="relative w-64 h-64 rounded-full mx-auto mt-10 md:m-0">
                 {icons.map((icon, index) => {
                     const radius = 100; // Adjust distance from center
@@ -34,8 +34,8 @@ const TechCircle = () => {
                     return (
                         <motion.div
                             initial={{ rotateZ: 0 }}
-                            animate={{ rotateZ: 360 }}
-                            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                            whileInView={{ rotateZ: 360 }}
+                            transition={{ duration: 2, ease: "linear" }}
                             key={index}
                             className="absolute w-12 h-12 rounded-full shadow-md flex items-center justify-center text-xl"
                             style={{ top: `${y}px`, left: `${x}px` }}
