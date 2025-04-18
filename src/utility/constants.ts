@@ -111,12 +111,12 @@ export const projects: CardInfoI[] = [
 export const aboutDescription = [
     `Hello there! I'm Bhagyam Pandey, a software engineer passionate about building interactive and responsive digital experiences.`,
     `I am: a forward-thinking innovator who thrives on transforming complex technical challenges into elegant, intuitive digital experiences. I excel at leveraging modern technologies and agile methodologies to drive product strategy, taking initiative and collaborating seamlessly with my team to deliver impactful solutions.`,
-    `I strive to: blend creativity with technical excellence to craft user-centric designs that not only solve problems but also enhance user engagement and drive business success. My passion lies in pushing boundaries and continuously refining processes to achieve measurable growth.`,
-    `I'm currently open to new opportunities where I can make a significant impact—if you think our visions align, let’s connect!`
+    `I strive to: blend creativity with technical excellence to craft user-centric designs that not only solve problems but also enhance user engagement and drive business success. My passion lies in pushing boundaries and continuously refining processes to achieve measurable growth.`
 ]
 
 export const aboutContent = [
     
     `With nearly 3 years of experience, I've partnered with tech companies to develop innovative web applications using React, Angular, TypeScript, Javascript, Tailwind and SCSS. Whether I'm crafting full-featured dashboards, streamlining workflows, or optimizing intuitive UIs.`,
-    `I focus on creating scalable solutions that make technology feel natural. When I'm not coding, I'm exploring new tools and techniques to push the boundaries of digital innovation.`
+    `I focus on creating scalable solutions that make technology feel natural. When I'm not coding, I'm exploring new tools and techniques to push the boundaries of digital innovation.`,
+    `I'm currently open to new opportunities where I can make a significant impact—if you think our visions align, let’s connect!`
 ]
