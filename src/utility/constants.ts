@@ -5,21 +5,18 @@ export const navigationElements: NavigationElementI[] = [
         id: 1,
         linkTo: 'about',
         name: 'About',
-        active: false,
         variant: LinkVariant.NavButton
     },
     {
         id: 2,
         linkTo: 'projects',
         name: 'Projects',
-        active: false,
         variant: LinkVariant.NavButton
     },
     {
         id: 3,
         linkTo: 'work',
         name: 'Work',
-        active: false,
         variant: LinkVariant.NavButton
     },
     // {

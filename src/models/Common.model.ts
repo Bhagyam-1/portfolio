@@ -6,7 +6,6 @@ export interface NavigationElementI {
     id?: number,
     linkTo: string,
     name: string,
-    active: boolean,
     variant: LinkVariant
 }
 

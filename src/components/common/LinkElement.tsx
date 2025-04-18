@@ -2,9 +2,11 @@ import { NavigationElementI } from "../../models/Common.model";
 
 interface LinkElementProps {
     linkElement: NavigationElementI;
+    activeSection: string;
+    setActiveSection: React.Dispatch<React.SetStateAction<string>>
 }
 
-const LinkElement = ({ linkElement }: LinkElementProps) => {
+const LinkElement = ({ linkElement, activeSection, setActiveSection }: LinkElementProps) => {
     const linkIcon = linkElement.name;
 
     let baseClasses = 'rounded-[40px] ease-in-out font-semibold text-md px-4 py-2';
@@ -12,7 +14,12 @@ const LinkElement = ({ linkElement }: LinkElementProps) => {
 
 
     return (
-        <a href={`#${linkElement.linkTo}`} className={`${baseClasses} ${linkElement.active ? activeClass : ''}`} >{linkIcon}</a>
+        <a href={`#${linkElement.linkTo}`}
+            className={`${baseClasses} ${activeSection === linkElement.linkTo ? activeClass : ''}`}
+            onClick={() => { setActiveSection(linkElement.linkTo) }}
+        >
+            {linkIcon}
+        </a>
     );
 }
 

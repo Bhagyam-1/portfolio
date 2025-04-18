@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { navigationElements as initialNavElements } from "../../utility/constants";
 import LinkElement from "../common/LinkElement";
-import { useLocation } from "react-router";
+import useSectionTracker from "../../custom-hooks/useSectionTracker";
 
 const HeaderNavigation = () => {
-    const location = useLocation();
-    const [navElements, setNavElements] = useState(initialNavElements);
-
-    useEffect(() => {
-        const updatedNavElements = navElements.map((element) => ({ ...element, active: location.hash === `#${element.linkTo}` }))
-        setNavElements(updatedNavElements)
-    }, [location.hash])
+    const [navElements, _setNavElements] = useState(initialNavElements);
+    const [activeSection, setActiveSection] = useState("");
+    useSectionTracker(activeSection, setActiveSection);
 
     return (
         <nav className="w-full flex justify-center">
@@ -18,7 +14,7 @@ const HeaderNavigation = () => {
                     dark:text-dark-text">
                 {
                     navElements.map((element) => {
-                        return <LinkElement linkElement={element} key={element.id} />
+                        return <LinkElement linkElement={element} key={element.id} activeSection={activeSection} setActiveSection={setActiveSection} />
                     })
                 }
             </ul>
