@@ -20,7 +20,7 @@ const ExperienceInfo = ({ experienceInfo }: ExperienceInfoProps) => {
             <div className="flex flex-col items-self-start gap-2 text-md text-dark-text-alt">
                 <h4 className="text-xl text-dark-text font-medium">{experienceInfo.list.position}</h4>
                 <p>{experienceInfo.list.timeLine}</p>
-                <ul className="flex flex-wrap max-w-[50vw] gap-2 pt-4 pl-4">
+                <ul className="flex flex-wrap md:max-w-[50vw] mx-w-full gap-2 pt-4 pl-4">
                     {experienceInfo.list.workInfo.map((workDone, index) => (
                         <li key={index} className="list-disc">{workDone}</li>
                     ))}

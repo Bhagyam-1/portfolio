@@ -12,12 +12,13 @@ const Home = () => {
             aria-live="polite"
         >
             <div className="relative h-full">
-                <div className="h-[100vh] flex flex-col items-center justify-center text-center">
-                    <h1 id="home-header" className="dark:text-dark-shadow text-3xl font-bold m-0">Hi there, I'm <span className="dark:text-pure-white">Bhagyam</span></h1>
-                    <h2 className="dark:text-dark-shadow text-2xl md:text-3xl m-0">
-                        I craft <span className="dark:text-pure-white">dynamic and pixel-perfect interfaces</span> <br />
+                <div className="h-[100vh] flex flex-wrap items-center justify-center md:text-center px-4">
+                    <h1 id="home-header" className="dark:text-dark-shadow font-bold m-0 text-2xl md:text-3xl lg:text-4xl">Hi there, I'm <span className="dark:text-pure-white">Bhagyam </span>
+                        <br />
+                        I craft <span className="dark:text-pure-white">dynamic and pixel-perfect interfaces</span>
+                        <br />
                         that bring ideas to life.
-                    </h2>
+                    </h1>
                 </div>
 
                 <div className="bg-noise-container">
