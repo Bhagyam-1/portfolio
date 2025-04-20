@@ -5,7 +5,6 @@ const useSectionTracker = (activeSection: string, setActiveSection: React.Dispat
         const callbackFn = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
                 if(entry.isIntersecting) {
-                    console.log(entry.target.id);
                     if(activeSection !== entry.target.id)
                         setActiveSection(entry.target.id);
                 }

@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <footer
             id="contact"
-            className="relative w-[100vw]"
+            className="relative w-[100vw] pb-12"
             aria-labelledby="contact-header"
         >
             <div className="flex flex-col items-center justify-center gap-14 p-8 pt-16">

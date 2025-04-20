@@ -14,12 +14,14 @@ const LinkElement = ({ linkElement, activeSection, setActiveSection }: LinkEleme
 
 
     return (
-        <a href={`#${linkElement.linkTo}`}
-            className={`${baseClasses} ${activeSection === linkElement.linkTo ? activeClass : ''}`}
-            onClick={() => { setActiveSection(linkElement.linkTo) }}
-        >
-            {linkIcon}
-        </a>
+        <li
+            className={`${baseClasses} ${activeSection === linkElement.linkTo ? activeClass : ''}`}>
+            <a href={`#${linkElement.linkTo}`}
+                onClick={() => { setActiveSection(linkElement.linkTo) }}
+            >
+                {linkIcon}
+            </a>
+        </li>
     );
 }
 

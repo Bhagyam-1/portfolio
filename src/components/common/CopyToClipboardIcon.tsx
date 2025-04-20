@@ -5,7 +5,7 @@ const CopyToClipboardIcons = ({ icon, iconInfo }: CopyToClipboardIconsPropsI) =>
     const { copyToClipboard, copied } = useClipboard();
 
     return (
-        <>
+        <li>
             <button type="button" onClick={() => { copyToClipboard(iconInfo.link.href) }}
                 className={`border-0 relative ${iconInfo.className}`} title={iconInfo.link.name}>
                 {icon}
@@ -24,7 +24,7 @@ const CopyToClipboardIcons = ({ icon, iconInfo }: CopyToClipboardIconsPropsI) =>
 
                 }
             </button>
-        </>
+        </li>
     )
 }
 
