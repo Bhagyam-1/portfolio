@@ -26,6 +26,9 @@ const AboutDescription = () => {
                     className="sticky transform top-8 rounded-full h-56 w-60 flex-shrink-0"
                     id="profile-image"
                     loading="lazy"
+                    decoding="async"
+                    width="240"
+                    height="224"
                 />
             </motion.div>
 
