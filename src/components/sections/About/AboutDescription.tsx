@@ -28,7 +28,7 @@ const AboutDescription = () => {
                     loading="lazy"
                     decoding="async"
                     width="240"
-                    height="224"
+                    height="251"
                 />
             </motion.div>
 
