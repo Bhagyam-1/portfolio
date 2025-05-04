@@ -1,10 +1,12 @@
 import Header from "./Header";
 import Home from "../../pages/Home";
-import About from "../../pages/About";
-import Projects from "../../pages/Projects";
 import { motion } from "framer-motion";
-import Work from "../../pages/Work";
-import Contact from "../../pages/Contact";
+import React from "react";
+
+const About = React.lazy(() => import("../../pages/About"));
+const Projects = React.lazy(() => import("../../pages/Projects"));
+const Work = React.lazy(() => import("../../pages/Work"));
+const Contact = React.lazy(() => import("../../pages/Contact"));
 
 const Layout = () => {
 

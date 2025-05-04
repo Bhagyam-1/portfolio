@@ -1,11 +1,11 @@
 
-import sketch from "../../../assets/sketch-draw.webp";
-import sketchMenu from "../../../assets/sketch-start.webp";
-import songHomepage from "../../../assets/homepage.webp";
-import songPlaylist from "../../../assets/playlist.webp";
-import chatCentric from "../../../assets/chat-centric.webp";
-import search from "../../../assets/search.webp";
-import userPlaylist from "../../../assets/myPlaylist.webp";
+import sketch from "/sketch-draw.webp";
+import sketchMenu from "/sketch-start.webp";
+import songHomepage from "/homepage.webp";
+import songPlaylist from "/playlist.webp";
+import chatCentric from "/chat-centric.webp";
+import search from "/search.webp";
+import userPlaylist from "/myPlaylist.webp";
 import { motion } from "framer-motion";
 
 const ProjectImage = ({ id }: { id: string }) => {

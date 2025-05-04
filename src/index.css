@@ -27,7 +27,7 @@
 
 @layer utilities {
     .bg-noise {
-      background-image: url("assets/background.webp");
+      background-image: url("/background.webp");
       width: 100%;
       background-size: 128px;
       background-repeat: repeat;
