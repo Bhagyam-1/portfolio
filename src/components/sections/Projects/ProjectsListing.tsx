@@ -1,3 +1,4 @@
+import { BiLinkExternal } from "react-icons/bi";
 import { projects } from "../../../utility/constants";
 import ProjectImage from "./ProjectImages";
 
@@ -5,6 +6,7 @@ interface Project {
     id: string;
     header: string;
     list: string | string[];
+    url?: string;
 }
 
 const ProjectsListing: React.FC = () => {
@@ -17,12 +19,22 @@ const ProjectsListing: React.FC = () => {
                     aria-labelledby={`project-heading-${project.id}`}
                 >
                     <header className="flex gap-4 items-center">
-                        <div className="h-[7px] w-[12px] bg-red-500 rounded-full shadow-[0_0_20px_10px_rgba(255,0,0,0.2)]"></div>
-                        <h3 className="text-xl" id={`project-heading-${project.id}`}>
-                            {project.header}
-                        </h3>
+                        <div className="h-[7px] min-w-[12px] bg-red-500 rounded-full shadow-[0_0_20px_10px_rgba(255,0,0,0.2)]"></div>
+                        <button
+                            title={`Open ${project.header} Project`}
+                            type="button"
+                            onClick={() => window.open(project.url, "_blank")}
+                        >
+                            <h3
+                                className="text-xl p-1 cursor-pointer group hover:underline flex items-center" 
+                                id={`project-heading-${project.id}`}
+                            >
+                                {project.header}
+                                <BiLinkExternal className="ml-2 hidden group-hover:inline-block" />
+                            </h3>
+                        </button>
                     </header>
-                    <p className="max-w-[50vw] text-lg self-end">
+                    <p className="max-w-[50vw] text-lg self-end dark:text-zinc-400">
                         {Array.isArray(project.list) ? project.list.join(", ") : project.list}
                     </p>
                     <ProjectImage id={project.id} />

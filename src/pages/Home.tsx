@@ -11,7 +11,7 @@ const Home = () => {
             aria-labelledby="home-header"
             aria-live="polite"
         >
-            <div className="relative h-full">
+            <div className="relative h-full heading-font">
                 <div className="h-[100vh] flex flex-wrap items-center justify-center md:text-center px-4">
                     <h1 id="home-header" className="dark:text-dark-shadow font-bold m-0 text-2xl md:text-3xl lg:text-4xl">Hi there, I'm <span className="dark:text-pure-white">Bhagyam </span>
                         <br />

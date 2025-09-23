@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -17,6 +19,7 @@
     --color-pure-white: #ffffff;
     --color-dark-radial-initial: #2f2e2e69;
     --color-dark-radial-finish: #d2d2d2a6;
+    --color-dark-grey: #a1a1a152;
   
     /* Font Sizes */
     --font-*: initial;
@@ -58,21 +61,71 @@
         backdrop-filter: blur(4.5px);
         background-color: rgba(15, 15, 15, 0.05);
     }
+
+    .heading-font {
+        font-family: 'Montaga', serif;
+    }
+      
+    .slow-spin {
+    animation: spin 3s linear infinite;
+    }
+    
+    .hanging-image {
+        background-image: url("/hang-image.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 6rem;
+        width: 16.5rem;
+    }
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 17.5rem;
+        width: 17.5rem;
+        border-radius: 10px 10px 90% 0px;
+        background-color: var(--color-dark-background);
+    }
+
+    @keyframes sway {
+        0%, 100% {
+          transform: perspective(800px) rotateX(0deg);
+        }
+        50% {
+          transform: perspective(800px) rotateX(8deg);
+        }
+    }
+    
+    .sway-animation {
+        transform-origin: top center;
+        animation: sway 4s ease-in-out infinite;
+    }
+
+    .perspective-card {
+        transform-style: preserve-3d;
+    }
 }
 
 html {
-    font-family: 'Montaga', serif;
+    font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-size: clamp(16px, 1.3vw, 30px);
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
 
 button:hover, a:hover {
     cursor: pointer;
 }
-
 
 ::-webkit-scrollbar {
     width: 0.3rem;
