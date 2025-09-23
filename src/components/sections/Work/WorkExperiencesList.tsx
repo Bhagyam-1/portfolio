@@ -3,7 +3,6 @@ import AnimatedLine from "../../animations/AnimatedLine";
 import ExperienceInfo from "./ExperienceInfo";
 
 const WorkExperiencesList = () => {
-
     return (
         <div className="flex flex-col h-full gap-4 py-3 w-full">
             {

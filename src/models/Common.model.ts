@@ -25,6 +25,7 @@ export interface CardInfoI {
     id: string;
     header: string;
     list: string | string[];
+    url?: string;
 }
 
 export interface ExperienceInfoI extends Pick<CardInfoI, 'id' | 'header'> {

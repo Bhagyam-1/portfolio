@@ -6,6 +6,10 @@ import songPlaylist from "/playlist.webp";
 import chatCentric from "/chat-centric.webp";
 import search from "/search.webp";
 import userPlaylist from "/myPlaylist.webp";
+import dashboard from "/dashboard.webp";
+import news from "/news.webp";
+import chat from "/chat.webp";
+import feed from "/feed.webp";
 import { motion } from "framer-motion";
 
 const ProjectImage = ({ id }: { id: string }) => {
@@ -14,6 +18,12 @@ const ProjectImage = ({ id }: { id: string }) => {
             { src: sketchMenu, alt: "Sketch app start screen" },
             { src: sketch, alt: "Sketch app drawing canvas" },
             { src: chatCentric, alt: "Sketch app chat feature" }
+        ],
+        omnispace: [
+            { src: dashboard, alt: "Omnispace dashboard" },
+            { src: news, alt: "Omnispace news feed" },
+            { src: chat, alt: "Omnispace chat feature" },
+            { src: feed, alt: "Omnispace feed" }
         ],
         musicPlayer: [
             { src: songHomepage, alt: "Music player homepage" },
@@ -28,6 +38,7 @@ const ProjectImage = ({ id }: { id: string }) => {
         <motion.div
             initial={{ rotateX: 85, scale: 0.2 }}
             whileInView={{ rotateX: 0, scale: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
             className="grid md:grid-cols-2 gap-4 h-fit w-[90vw] justify-center p-12"
             aria-labelledby={`project-images-${id}`}
@@ -38,7 +49,7 @@ const ProjectImage = ({ id }: { id: string }) => {
                     key={index}
                     src={image.src}
                     alt={image.alt}
-                    className="h-auto object-cover"
+                    className="h-auto w-3xl object-cover"
                     loading="lazy"
                     decoding="async"
                     width="400"
