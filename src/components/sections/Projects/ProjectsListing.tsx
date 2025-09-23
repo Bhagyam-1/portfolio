@@ -23,14 +23,14 @@ const ProjectsListing: React.FC = () => {
                         <button
                             title={`Open ${project.header} Project`}
                             type="button"
-                            onClick={() => window.open(project.url, "_blank")}
+                            onClick={() => project.url && window.open(project.url, "_blank")}
                         >
                             <h3
-                                className="text-xl p-1 cursor-pointer group hover:underline flex items-center" 
+                                className={`text-xl p-1 cursor-pointer group ${project.url ? "hover:underline" : ""} flex items-center`}
                                 id={`project-heading-${project.id}`}
                             >
                                 {project.header}
-                                <BiLinkExternal className="ml-2 hidden group-hover:inline-block" />
+                                {project.url && <BiLinkExternal className="ml-2 hidden group-hover:inline-block" />}
                             </h3>
                         </button>
                     </header>

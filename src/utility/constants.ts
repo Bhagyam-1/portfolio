@@ -93,16 +93,16 @@ export const experiences: ExperienceInfoI[] = [
 
 export const projects: CardInfoI[] = [
     {
-        id: "musicPlayer",
-        header: "Music Player App | React, TypeScript, REST API",
-        list: "Music player with playlist browsing, song search, and management. Responsive, accessible UI built with React. Seamless navigation between tracks, albums, and artists.",
-        url: "https://song-sphere-gold.vercel.app/"
-    },
-    {
         id: "omnispace",
         header: "Omnispace | Next.js, TypeScript, REST API, WebSocket",
         list: "Omnispace is an all-in-one application designed to bring everything you need into a single platform. Whether you want to chat, share updates, explore new connections, or stay informed with the latest news across multiple categories and languages, Omnispace has you covered.",
         url: "https://omnispace-indol.vercel.app/"
+    },
+    {
+        id: "musicPlayer",
+        header: "Music Player App | React, TypeScript, REST API",
+        list: "Music player with playlist browsing, song search, and management. Responsive, accessible UI built with React. Seamless navigation between tracks, albums, and artists.",
+        url: "https://song-sphere-gold.vercel.app/"
     },
     {
         id: "doodle",
