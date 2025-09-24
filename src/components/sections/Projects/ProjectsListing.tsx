@@ -26,7 +26,7 @@ const ProjectsListing: React.FC = () => {
                             onClick={() => project.url && window.open(project.url, "_blank")}
                         >
                             <h3
-                                className={`text-xl p-1 cursor-pointer group ${project.url ? "hover:underline" : ""} flex items-center`}
+                                className={`text-xl p-1 cursor-pointer group ${project.url ? "hover:underline" : ""} flex items-center text-start`}
                                 id={`project-heading-${project.id}`}
                             >
                                 {project.header}
@@ -34,7 +34,7 @@ const ProjectsListing: React.FC = () => {
                             </h3>
                         </button>
                     </header>
-                    <p className="max-w-[50vw] text-lg self-end dark:text-zinc-400">
+                    <p className="sm:max-w-[50vw] text-lg self-end dark:text-zinc-400">
                         {Array.isArray(project.list) ? project.list.join(", ") : project.list}
                     </p>
                     <ProjectImage id={project.id} />

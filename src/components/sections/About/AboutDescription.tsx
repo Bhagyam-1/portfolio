@@ -4,14 +4,10 @@ import profile from '../../../assets/profile.webp';
 
 const AboutDescription = () => {
     return (
-        <motion.section
-            initial={{ y: 60 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 1 }}
+        <section 
             aria-labelledby="about-description"
-            className="md:h-[100vh] flex flex-col mt-12 md:flex-row justify-between items-center gap-12 relative">
-
+            className="md:h-[100vh] flex flex-col mt-12 md:flex-row justify-between items-center gap-12 relative"
+        >
             <h3 id="about-intro" className="sr-only">My Journey in Tech</h3>
 
             <div className="relative">
@@ -49,10 +45,14 @@ const AboutDescription = () => {
                         <p className="text-md text-dark-grey">Frontend Developer</p>
                     </div>
                 </motion.div>
-
             </div>
 
-            <div className="flex flex-col justify-center">
+            <motion.div 
+            initial={{ y: 60 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="flex flex-col justify-center">
                 {
                     aboutDescription.map((description, index) =>
                         <p
@@ -63,8 +63,8 @@ const AboutDescription = () => {
                         </p>
                     )
                 }
-            </div>
-        </motion.section>
+            </motion.div>
+        </section>
     )
 }
 

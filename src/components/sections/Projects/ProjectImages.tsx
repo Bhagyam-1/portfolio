@@ -40,7 +40,7 @@ const ProjectImage = ({ id }: { id: string }) => {
             whileInView={{ rotateX: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="grid md:grid-cols-2 gap-4 h-fit w-[90vw] justify-center p-12"
+            className="grid md:grid-cols-2 gap-4 h-fit w-[90vw] justify-center py-12"
             aria-labelledby={`project-images-${id}`}
         >
             <h4 id={`project-images-${id}`} className="sr-only">Screenshots of the project</h4>
