@@ -5,18 +5,28 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import React from "react";
 
 const icons = [
+  // Core web fundamentals first
   { component: <SiHtml5 className="text-gray-400 group-hover:text-red-500" />, name: "HTML" },
   { component: <SiCss3 className="text-gray-400 group-hover:text-blue-500" />, name: "CSS" },
   { component: <IoLogoJavascript className="text-gray-400 group-hover:text-yellow-400" />, name: "JavaScript" },
+  { component: <SiTypescript className="text-gray-400 group-hover:text-blue-400" />, name: "TypeScript" },
+
+  // Your strongest frontend stack next
   { component: <FaReact className="text-gray-400 group-hover:text-sky-400" />, name: "React" },
   { component: <SiNextdotjs className="text-gray-400 group-hover:text-white" />, name: "Next.js" },
   { component: <RiTailwindCssFill className="text-gray-400 group-hover:text-sky-400" />, name: "Tailwind CSS" },
+
+  // Secondary framework
   { component: <SiAngular className="text-gray-400 group-hover:text-red-500" />, name: "Angular" },
-  { component: <SiTypescript className="text-gray-400 group-hover:text-blue-400" />, name: "TypeScript" },
+
+  // Styling extras (weaker skill goes later)
   { component: <FaSass className="text-gray-400 group-hover:text-pink-500" />, name: "Sass" },
+
+  // Tools
   { component: <SiGit className="text-gray-400 group-hover:text-orange-500" />, name: "Git" },
   { component: <SiFigma className="text-gray-400 group-hover:text-purple-400" />, name: "Figma" },
 ];
+
 
 const TechCircle = () => {
   return (
