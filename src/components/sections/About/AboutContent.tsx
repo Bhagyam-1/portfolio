@@ -24,8 +24,8 @@ const AboutContent = () => {
                                     visible: { opacity: 1 },
                                 }}
                                 transition={{
-                                    delay: index * 0.2,
-                                    duration: 0.2,
+                                    delay: index * 0.1,
+                                    duration: 0.1,
                                 }}
                             >
                                 {char}
@@ -40,7 +40,7 @@ const AboutContent = () => {
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     viewport={{ once: true }}
-                    transition={{ delay: text.length * 0.2, duration: 0.6 }}
+                    transition={{ delay: text.length * 0.1, duration: 0.4 }}
                 />
 
                 <motion.div 
@@ -51,7 +51,7 @@ const AboutContent = () => {
                         hidden: { opacity: 0, x: -30 },
                         visible: { opacity: 1, x: 0 },
                     }}
-                    transition={{ delay: (text.length) * 0.2, duration: 0.6 }}
+                    transition={{ delay: (text.length) * 0.1, duration: 0.4 }}
                     className="w-full"
                 >
                     <TechIcons />
